@@ -20,7 +20,7 @@ Resources:
     Properties:
       CodeUri: .
       Runtime: nodejs18.x
-      Handler: dist/graphql/index.handler
+      Handler: dist/graphql-function/index.handler
       Events:
         GraphQL:
           Type: Api
