@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "Debug Operation (POST)",
+      "invokeTarget": {
+        "target": "template",
+        "templatePath": "template.yaml",
+        "logicalId": "GraphQLFunction"
+      },
+      "lambda": {
+        "payload": {
+          "json": {
+            "requestContext": {
+              "version": "1.0"
+            },
+            "path": "/graphql",
+            "httpMethod": "POST",
+            "body": "{ \"query\": \"{__typename}\" }",
+            "multiValueHeaders": {
+              "Accept": "*",
+              "origin": "",
+              "content-type": "application/json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
