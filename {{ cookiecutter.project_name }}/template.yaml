@@ -20,6 +20,7 @@ Resources:
     Properties:
       CodeUri: .
       Runtime: nodejs18.x
+      Timeout: 30
       Handler: dist/graphql-function/index.handler
       Events:
         GraphQL:
