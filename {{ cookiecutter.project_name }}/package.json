@@ -7,9 +7,9 @@
     "build": "tsc",
     "codegen": "graphql-codegen",
     "deploy": "sam deploy",
-    "dev":"concurrently \"npm:watch*\" \"npm run start\"",
+    "dev":"concurrently \"npm:watch*\" \"sam local start-api\"",
     "start": "sam local start-api --warm-containers EAGER",
-    "watch:build": "tsc --watch",
+    "watch:build": "tsc --watch --preserveWatchOutput",
     "watch:codegen": "graphql-codegen --watch",
     "postinstall": "npm run codegen && npm run build",
     "test":"echo 'Tests pass!'"
