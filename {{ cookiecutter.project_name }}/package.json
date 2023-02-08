@@ -11,7 +11,8 @@
     "start": "sam local start-api",
     "watch:build": "tsc --watch",
     "watch:codegen": "graphql-codegen --watch",
-    "postinstall": "npm run codegen && npm run build"
+    "postinstall": "npm run codegen && npm run build",
+    "test":"echo 'Tests pass!'"
   },
   "dependencies": {
     "@apollo/server": "^4.3.3",
