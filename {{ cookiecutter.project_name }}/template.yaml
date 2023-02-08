@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    {{ cookiecutter.project_name }}
+
+Parameters:
+  Environment:
+    Type: String
+    Description: Which environment do you want to deploy to? (dev,stage, or prod)
+    AllowedValues:
+      - dev
+      - stage
+      - prod
+    Default: prod
+
+Resources:
+  GraphQLFunction:
+    Type: AWS::Serverless::Function
+    FunctionName: '${Environment}-{{ cookiecutter.project_name }}'
+    Properties:
+      CodeUri: .
+      Runtime: nodejs18.x
+      Handler: dist/graphql/index.handler
+      Events:
+        GraphQL:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: post
+        ApolloSandbox:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: get
+        ApolloExplorer:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: options

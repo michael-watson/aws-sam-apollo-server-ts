@@ -1,0 +1,33 @@
+{
+  "name": "acephei-products",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "deploy": "sam deploy",
+    "build": "tsc",
+    "start": "sam local start-api",
+    "test": "echo 'Fake tests passed'",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.3.3",
+    "@apollo/subgraph": "^2.3.1",
+    "@as-integrations/aws-lambda": "^2.0.0",
+    "faker": "^5.5.3",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "graphql-tools": "^8.2.0"
+  },
+  "devDependencies": {
+    "@apollo/rover": "^0.3.0",
+    "@graphql-codegen/cli": "^3.0.0",
+    "@graphql-codegen/typescript": "^3.0.0",
+    "@graphql-codegen/typescript-resolvers": "^3.0.0",
+    "@types/faker": "^5.5.9",
+    "@types/node": "latest",
+    "typescript": "latest"
+  },
+  "license": "ISC"
+}
